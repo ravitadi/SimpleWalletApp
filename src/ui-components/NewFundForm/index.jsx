@@ -1,13 +1,9 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import React from 'react'
+import {Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle } from '@material-ui/core/'
 import { withStyles } from '@material-ui/core/styles';
 
+import {FundsContext} from '../FundsContext'
+import FundModel from '../../backend/models/FundModel'
 
 // I would use L10n module here && icon module
 const Content = {
@@ -62,7 +58,6 @@ class NewFundForm extends React.Component {
     console.log('clicking the form');
     event.preventDefault()
     const data = new FormData(event.target);
-
     fetch('/api/form-submit-url', {
       method: 'POST',
       body: data,
